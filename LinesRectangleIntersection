@@ -1,9 +1,10 @@
-/***problem from Magister(postgraduate) entrance exam MSU (Moscow State University)
-Faculty of Computing Mathematics and Cybernetics***
+/*problem from Magister(postgraduate) entrance exam MSU (Moscow State University)
+Faculty of Computing Mathematics and Cybernetics
 
 Description:
+
 In text file  input.txt  there defined arithmetcal expression
-written by Roman digits.Example of such exp[ression is as below
+written by Roman digits.Example of such expression is as below:
 IX-VII-XX+XVI/II-XI
 
 Task is to write routine that takes as input this expression from file 
