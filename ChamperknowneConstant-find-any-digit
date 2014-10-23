@@ -7,7 +7,7 @@ int findDigit(int m)
 	//  m  -  is  m-th digit of Champerknowne constant that has to be found
 	long N[10];// an array  for keeping  sum  of all 1-digit, all 2-digit,all 3-digit nambers 
 	char Dbuffer[10]; /* char array for storing last k-digit number (number x)
-						  which contains m-th digit of our sequence on y-th place from beginning of number x */
+	   which contains m-th digit of our sequence on y-th place from beginning of number x */
 	long x1=0,x2=0,y;
 
 	int k,i,result;
