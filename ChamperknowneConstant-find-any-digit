@@ -1,76 +1,56 @@
-
-#define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
-char findDigit(int m)
-{
-	long N[10000];// an array  for keeping  sum  of all 1-digit, all 2-digit,all 3-digit nambers 
-	char Dbuffer[100000]="qqqqqqqqq"; /* char array for storing last k-digit number (number x)
-	which contains m-th digit of our sequence on y-th place from beginning of number x */
-	//long temp[1];
-
+int findDigit(int m)
+{	
+	//  m  -  is  m-th digit of Champerknowne constant that has to be found
+	long N[10];// an array  for keeping  sum  of all 1-digit, all 2-digit,all 3-digit nambers 
+	char Dbuffer[10]; /* char array for storing last k-digit number (number x)
+						  which contains m-th digit of our sequence on y-th place from beginning of number x */
 	long x1=0,x2=0,y;
-    //long  difference;//  m  -  is  m-th digit of Champernowne constant that has to be found
-	int k,i;
-	//m=28383;
-	//x2=0;		
-      for (i=0;i<10;i++)
-		  N[i]=0;
 
-            k=1;	
-			
+	int k,i,result;
+
+	for (i=0;i<10;i++)
+	{
+		N[i]=0;
+	}
+
+	k=1;	
+
 	if  (m==1)
 	{
-		 x2=1;
-		 y=1;
-          
+		x2=1;
+		y=1;          
 	}
 	else
 	{			
-			for (k=1;N[k-1]<=m;k++)
-        {     printf("k = %d\n\n",k);
-              N[k] = N[k-1] + (k)*9*((int)(pow((double)10,k-1)));
-	        //final_k=k;
-			//temp[0]=k;
-	     }
-  printf("final k= %d\n\n",k-1);  printf("\nN[%d] = %d\n\n",k-2,N[k-2]);
-		//printf("final N[%d] = %d\n\n",k-2,N[k-2]);
-  printf("difference = %d\n\n",m - N[k-2] );
-		
-		//difference = m - N[k-2] ;    
-		
-		
-		  x1 = (int) floor( (double)((m - N[k-2])/(k-1)) );
-		  if (x1<1)
-		    {
-			  x1=1;
-              x2 = x1 + (int)pow((double)10,1)-1; 
-			  y=1; printf("x1 = %d\n\n",x1);
-		    }	             
-		  else
-		  { 
-			 //printf("x1 = %d\n\n",x1);
-		  //if (k==0)
-		  //{
-			 // x2=x1=1;
-		  //}
-		  //printf("x1 = %d\n\n",x1); 
-		  x2 = x1 + (int)pow((double)10,k-2)-1;  //  target (k-1)-th number  that we're lookin for
-		  //printf("x2 = %d\n\n",x2);
-           y = (m - N[k-2]) - x1*(k-1);
-		 
-		  }	
+		for (k=1;N[k-1]<=m;k++)
+		{ 			// printf("k = %d\n\n",k);   
+			N[k] = N[k-1] + (k)*9*((int)(pow((double)10,k-1)));
+			printf("N[%d] = %d\n\n",k,N[k]);
+		}
+
+		x1 = (int) floor( (double)((m - N[k-2])/(k-1)) );
+		if (x1<1)
+		{
+			x1=1;
+			x2 = x1 + (int)pow((double)10,1)-1; 
+			y=1;// printf("x1 = %d\n\n",x1);
+		}	             
+		else
+		{ 
+			x2 = x1 + (int)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
+			y = (m - N[k-2]) - x1*(k-1);
+		}	
 	}
-	       itoa(x2,Dbuffer,10);
-		   printf("Dbuffer[%d] = %d\n\n",y-1,Dbuffer[i]);
-	//for (i=0;i<(sizeof(Dbuffer)/sizeof(Dbuffer[0]));i++)
-		//printf("Dbuffer[%d] = %d\n\n",i,Dbuffer[i]);
-     //printf("The %d-th  digit of Number 1234567891011... is : %c ",m,Dbuffer[y-1]);
-	 //digit = (long)atoi((const char*)Dbuffer[y-1]);
-	 return Dbuffer[y-1]; 	
+	itoa(x2,Dbuffer,10);
+//	printf("Dbuffer=%s\n",Dbuffer);
+//	printf("Dbuffer[%d]=%c\n",y-1,Dbuffer[y-1]);
+	result = Dbuffer[y-1]-'0';
+//	printf("result=%d\n",result);
+	return result;	
 }
 
 
@@ -78,37 +58,22 @@ void  main()
 {
 	int i,num[]={1,10,100,1000,10000,100000,1000000};
 	int product=1,digit[10];
-	char digits[10];
-	//const char *bb;
-	//char *aa="1729wwwwww";
-	//bb = findDigit(num[3]);
-	//char const *cc;
-	//cc=bb;
-	//const char *cc= (const char *)bb;
-	//for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
-	//{ 		
-	//	//printf("the %d-th digit of sequence is %c\n\n",num[i],);    
-	//}
+
 	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
 	{ 		
-		//printf("the %d-th digit of sequence is %c\n\n",num[i],);
-		 digits[i]=findDigit(num[i]);
-         digit[i]=digits[i]-'0';
-		 //printf("the %d-th digit of sequence is %d\n\n",num[i],digit[i]);
+		digit[i]=findDigit(num[i]);
 	}
 	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
 	{ 		
 		printf("the %d-th digit of sequence is %d\n\n",num[i],digit[i]);
          
 	}
-	//printf ("findDigit(num[3]) is %d",atoi(bb));	
 	for (i=0;i<sizeof(num)/sizeof(num[0]);i++)
 	{ 		
-		  //digit[i] = (int)atoi(findDigit(num[i]));
      	 product *= digit[i] ;
 	}
-	//printf("digit on %d-th place is %c",num[6],findDigit(num[6]));	
-	printf("Product of d1*d10*d100*d1000*d10000*d100000*d1000000 = %d\n\n"
-		,product);
+	printf("digit on %d-th place is %d\n",28383,findDigit(28383));	
+	printf("digit on %d-th place is %d\n",206788,findDigit(206788));	
+	printf("Product of d1*d10*d100*d1000*d10000*d100000*d1000000 = %d\n\n",product);
 	getchar();
 }
