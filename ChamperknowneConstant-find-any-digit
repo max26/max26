@@ -53,7 +53,6 @@ int findDigit(int m)
 	return result;	
 }
 
-
 void  main()
 {
 	int i,num[]={1,10,100,1000,10000,100000,1000000};
@@ -62,15 +61,8 @@ void  main()
 	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
 	{ 		
 		digit[i]=findDigit(num[i]);
-	}
-	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
-	{ 		
 		printf("the %d-th digit of sequence is %d\n\n",num[i],digit[i]);
-         
-	}
-	for (i=0;i<sizeof(num)/sizeof(num[0]);i++)
-	{ 		
-     	 product *= digit[i] ;
+		product *= digit[i] ;
 	}
 	printf("digit on %d-th place is %d\n",28383,findDigit(28383));	
 	printf("digit on %d-th place is %d\n",206788,findDigit(206788));	
