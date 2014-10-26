@@ -2,9 +2,9 @@
 #include <math.h>
 #include <stdlib.h>
 
-int findDigit(int m)
+int findChampernowneDigit(int m)
 {	
-	//  m  -  is  m-th digit of Champerknowne constant that has to be found
+	//  m  -  is  m-th digit of Champernowne constant that has to be found
 	long N[10];// an array  for keeping  of all 1-digit, all 2-digit,all 3-digit numbers 
 	char Dbuffer[10]; /* char array for storing last k-digit number (number x)
 	   which contains m-th digit of our sequence on y-th place from beginning of number x */
@@ -60,12 +60,12 @@ void  main()
 
 	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
 	{ 		
-		digit[i]=findDigit(num[i]);
+		digit[i]=findChampernowneDigit(num[i]);
 		printf("the %d-th digit of sequence is %d\n\n",num[i],digit[i]);
 		product *= digit[i] ;
 	}
-	printf("digit on %d-th place is %d\n",28383,findDigit(28383));	
-	printf("digit on %d-th place is %d\n",206788,findDigit(206788));	
+	printf("digit on %d-th place is %d\n",28383,findChampernowneDigit(28383));	
+	printf("digit on %d-th place is %d\n",206788,findChampernowneDigit(206788));	
 	printf("Product of d1*d10*d100*d1000*d10000*d100000*d1000000 = %d\n\n",product);
 	getchar();
 }
