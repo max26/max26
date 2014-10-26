@@ -8,8 +8,6 @@ In file 'input2.txt' there are 3 values defined: 1st value is precision of calcu
 2nd and 3rd values are limits of integration of the definite integral
 */
 
-
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
