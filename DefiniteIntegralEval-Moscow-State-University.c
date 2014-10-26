@@ -1,11 +1,13 @@
 /*  Moscow State University - Faculty of Computing mathematics and Cybernetics
 Magistrate  etrance exam - 2013   */
 
-/*  Evaluate  intagral of polynomial (its degree is supposed to be less than 99)
+/*  
+Evaluate  intagral of polynomial (its degree is supposed to be less than 99)
 ,if coefficients of this polynomial are defined in file input1.txt
-In file 'input2.txt' there are 3 values defined: 1st value is precision of calculation
+In file 'input2.txt' there are 3 values defined: 
+1nd and 2nd values are limits of integration of the definite integral;
+3rd value is precision of calculation
 (quantity of precision digits after point 0.0000);
-2nd and 3rd values are limits of integration of the definite integral
 */
 
 #include <stdlib.h>
