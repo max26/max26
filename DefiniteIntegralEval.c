@@ -1,13 +1,13 @@
 /*  Moscow State University - Faculty of Computing mathematics and Cybernetics
-Magistrate  etrance exam - 2013   */
+Magistrate  entrance exam - 2013   */
 
 /*  
 Evaluate  integral of polynomial (its degree is supposed to be less than 99)
-,if coefficients of this polynomial are defined in file input1.txt
+,if coefficients of this polynomial are defined in file input1.txt.
 In file 'input2.txt' there are 3 values defined: 
 1nd and 2nd values are limits of integration of the definite integral;
 3rd value is precision of calculation
-(quantity of precision digits after point 0.0000);
+(quantity of precision digits after point 0.0000...);
 */
 
 #include <stdlib.h>
