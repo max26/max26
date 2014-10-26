@@ -1,3 +1,4 @@
+
 /*  Moscow State University - Faculty of Computing mathematics and Cybernetics
 Magistrate  entrance exam - 2013   */
 
@@ -13,9 +14,9 @@ In file 'input2.txt' there are 3 values defined:
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-//#include <iostream>
+#include <iostream>
 
-//using namespace std;
+using namespace std;
 
 //#define EPS 1.0e-4
 #define JMAX 20
@@ -146,13 +147,10 @@ void main()
 
 
 
-
   float (*func)(float);
  
   func = &polynomial;
 result = qtrap(func,a,b,n);
-
-
 
 
 
