@@ -90,8 +90,9 @@ float qtrap(float (*f)(float),float a,float b,int n)
 }
 
 /*   This function takes coefficients of polynomial that has to be integrated as parameters
-from input file  and return this polynomial. In routine this function is used as function pointer as
-input to other eval function "trapezd"*/
+from input file  and returns value of this polynomial. In routine this function later is used as function pointer 
+in the input to other eval function "trapezd" 
+*/
 
 float polynomial(float x)
 {
