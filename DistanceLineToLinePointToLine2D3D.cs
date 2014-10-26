@@ -1,4 +1,22 @@
-      private double DotProduct(double[] v, double[] w)
+
+      
+        //Compute the dot product AB.AC
+        //private double DotProduct(double[] pointA, double[] pointB, double[] pointC)
+        //{
+        //    double[] AB = new double[2];
+        //    double[] BC = new double[2];
+        //    AB[0] = pointB[0] - pointA[0];
+        //    AB[1] = pointB[1] - pointB[1];
+        //    BC[0] = pointC[0] - pointB[0];
+        //    BC[1] = pointC[1] - pointB[1];
+        //    double dot = AB[0] * BC[0] + AB[1] * BC[1];
+
+        //    return dot;
+        //}
+
+
+
+        private double DotProduct(double[] v, double[] w)
         {
             double dot;
             return dot = v[0] * w[0] + v[1] * w[1];
@@ -94,8 +112,8 @@
             }
         }
 
-        double LineToPointDistance3D(double[] pointA, double[] pointB, double[] pointC,
-            bool isSegment)
+        double LineToPointDistance3D(double[] pointA, double[] pointB, double[] pointC)
+          // ,bool isSegment)
         {
             double d1 = pointB[0] - pointA[0];
             double d2 = pointB[1] - pointA[1];
@@ -120,8 +138,8 @@
 
 
 
-        double LineToPointDistance2D(double[] pointA, double[] pointB, double[] pointC,
-            bool isSegment)
+        double LineToPointDistance2D(double[] pointA, double[] pointB, double[] pointC)
+          //  ,bool isSegment)
         {
             double d1 = pointB[0] - pointA[0];
             double d2 = pointB[1] - pointA[1];
@@ -227,10 +245,8 @@
 
             // double distance;
             //distance = ;
-            MessageBox.Show("LineToPointDistance2D: " + LineToPointDistance2D(pA, pB, pC, false));
-            MessageBox.Show("LineToPointDistance3D: " + LineToPointDistance3D(pA3, pB3, pC3, false));
+            MessageBox.Show("LineToPointDistance2D: " + LineToPointDistance2D(pA, pB, pC));
+            MessageBox.Show("LineToPointDistance3D: " + LineToPointDistance3D(pA3, pB3, pC3));
             MessageBox.Show("LineToLIneDistance3D: " + LineToLineDistance3D(A, B, C, D));
             MessageBox.Show("Distance2: " + LineToLineDistance3D(A2, B2, C2, D2));
-
-
         }
