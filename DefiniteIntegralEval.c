@@ -37,7 +37,7 @@ void nrerror(char error_text[])
 	exit();
 }
 
-
+/*  taken from the book "Numerical Recipes in C"   */
 float trapzd(float (*func)(float),float a,float b,int n)
 {
 	float x,tnm,sum,del;
@@ -59,9 +59,6 @@ float trapzd(float (*func)(float),float a,float b,int n)
 		
 	}
 }
-
-
-
 /*  taken from the book "Numerical Recipes in C"   */
 float qtrap(float (*f)(float),float a,float b,int n)
 {
