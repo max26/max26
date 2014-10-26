@@ -13,9 +13,9 @@ In file 'input2.txt' there are 3 values defined:
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include <iostream>
+//#include <iostream>
 
-using namespace std;
+//using namespace std;
 
 //#define EPS 1.0e-4
 #define JMAX 20
@@ -26,16 +26,16 @@ float  EPS;
 #define FUNC(x)   ((*func)(x))
 
 //int cnt1;
-void nrerror(char error_text[])
+//void nrerror(char error_text[])
 /* Numerical Recipes standard error handler */
-{
+//{
 	//void _exit();
 
-	fprintf(stderr,"Model run-time error...\n");
-	fprintf(stderr,"%s\n",error_text);
-	fprintf(stderr,"...now exiting to system...\n");
-	exit();
-}
+///	fprintf(stderr,"Model run-time error...\n");
+//	fprintf(stderr,"%s\n",error_text);
+//	fprintf(stderr,"...now exiting to system...\n");
+//	exit();
+//}
 
 /*  taken from the book "Numerical Recipes in C"   */
 float trapzd(float (*func)(float),float a,float b,int n)
@@ -84,7 +84,7 @@ float qtrap(float (*f)(float),float a,float b,int n)
 				(s == 0.0 && olds == 0.0)) {   return s;}
 	      	olds = s;//printf("\ns=%f\n",s);
 	}
-	nrerror("Too many steps in routine qtrap");
+	//nrerror("Too many steps in routine qtrap");
 	return 0.0;    // never   get here	
 }
 
@@ -100,7 +100,9 @@ float polynomial(float x)
 	
 	freopen("polynomial.txt","r",stdin);
     for (int i=0;i<=5;i++)
-    cin>>cf[i];
+       scanf("%f",&cf[i]);
+    
+    //cin>>cf[i];
 
 
 
