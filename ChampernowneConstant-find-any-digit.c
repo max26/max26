@@ -3,11 +3,21 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+/*  Look at article for explanation of implemented algorithm below
+http://www.mathblog.dk/project-euler-40-digit-fractional-part-irrational-number/
+It has helped me a lot in designing this routine.
+Thanks a lot to the article's author!
+*/
 int findChampernowneDigit(int m)
 {	
-   //  m  - это m-ая цифра константы Чамперноуна, которую нужно найти
-    long N[10];// массив для хранения всех 1-значных чисел,2-хзначных чисел,3-хзначных чисел,....
-    char Dbuffer[10];/* массив для хранения последнего k-значного числа (число x2),которое содержит m-ое число нашей последовательности на y-ом месте,считая от начала числа x2 */
+   //  m  -  m-th of Champernowne constant that has to be found
+    long N[10];// array of countin number of digits used by 1-digiters,2-digiters,3-digiters etc
+    char Dbuffer[10];
+    /* array for storing our target last number x2 that contains our sought digit 
+    (this is number x2 , that contains our m-th digit of sequence on y-th place,if count from beginning of number x2
+    As arrays in C are zero-based , so our target digit is on (y-1)-th place in number x2 
+    */
     long x1=0,x2=0,y;
     int k,i,result;
     int remainder2; 
