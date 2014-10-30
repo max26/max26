@@ -115,7 +115,7 @@ begin = clock();
   //printf("\nTime of execution is %f\n",time_spent);
 	//t = clock() - t;
   //printf ("It took me %d clicks (%f seconds).\n",t,((float)t)/CLOCKS_PER_SEC);
-   printf ("It took me %f clicks (%f seconds).\n",time_spent,(time_spent)/CLOCKS_PER_SEC);
+   printf ("It took me %f clicks (%f.10 seconds).\n",time_spent,(time_spent)/CLOCKS_PER_SEC);
 
    getchar();
-}
+}    
