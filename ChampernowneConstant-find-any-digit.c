@@ -1,28 +1,37 @@
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-#include <time.h>
-
 
 /*  Look at next article for explanation of implemented algorithm below
 http://www.mathblog.dk/project-euler-40-digit-fractional-part-irrational-number/
 It has helped me a lot in designing this routine.
 Thanks a lot to the article's author Kristian!
+Also following page of math forum on this subject is very informative and useful 
+http://math.stackexchange.com/questions/61890/computing-the-nth-term-of-a-sequence-when-n-is-really-large
 */
-int findChampernowneDigit(int m)
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
+
+//#define __CRT__NO_INLINE
+
+char* ulltoa(unsigned long long _n, char * _c, int _i)
+{ return _ui64toa (_n, _c, _i); } 
+
+
+int findChampernowneDigit(unsigned long long m)
 {	
-   //  m  -  m-th of Champernowne constant that has to be found
-    long N[10];// array that keeps number of digits used by 1-digiters,2-digiters,3-digiters etc
-    char Dbuffer[10];
-    /* array for storing our target last number x2 that contains our sought digit 
+   //  m  -  m-th digit of Champernowne constant that has to be found
+    unsigned long long N[20];// array that keeps number of digits occupied by 1-digiters,2-digiters,3-digiters etc
+    char Dbuffer[20];
+    /* array for storing our target last number x2 that contains our sought m-th digit 
     (this is number x2 , that contains our m-th digit of sequence on y-th place,if count from beginning of number x2
-    As arrays in C are zero-based , so our target digit is on (y-1)-th place in number x2 
+    As arrays in C are zero-based , so our target digit is on (y-1)-th place in number x2. 
     */
-    long x1=0,x2=0,y=0;
+    unsigned long long x1=0,x2=0;
+	int y=0;
     int k,i,result;
     int remainder; 
 
-    for (i=0;i<10;i++)
+    for (i=0;i<15;i++)
     {
         N[i]=0;
     }       
@@ -35,43 +44,42 @@ int findChampernowneDigit(int m)
     {          
         for (k=1;N[k-1]<=m;k++)
         {    
-            N[k] = N[k-1] + (k)*9*((int)(pow((double)10,k-1)));           
+            N[k] = N[k-1] + (k)*9*((unsigned long long)(pow((double)10,k-1)));           
         }    
         x1 = (m - N[k-2])/(k-1) ;
-	   remainder =(m - N[k-2])%(k-1) ;
+		remainder =(m - N[k-2])%(k-1) ;
 
         if (x1<1)
         {   
-		if (remainder == 0)
-		{
-	          x1=0;
-		}
-		else
-		{
-		  x1=1;
-		}
-            x2 = x1 + (int)pow((double)10,1)-1;
+			if (remainder == 0)
+			{
+			  x1=0;
+			}
+			else
+			{
+		      x1=1;
+			}
+            x2 = x1 + (unsigned long long)pow((double)10,1)-1;
             y=1;
         }               
         else
         {	
 			if (remainder == 0) 
 			{
-				x2 = x1 + (int)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
+				x2 = x1 + (unsigned long long)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
 				y = (m - N[k-2]) - x1*(k-1)+(k-1);	
 			}
 			else
 			{
-				x2 = x1 + (int)pow((double)10,k-2);  //  target (k-1)-th number that we're lookin for
+				x2 = x1 + (unsigned long long)pow((double)10,k-2);  //  target (k-1)-th number that we're lookin for
 				y = (m - N[k-2]) - x1*(k-1);
 			}		
         }  
     }
-    itoa(x2,Dbuffer,10);
+    ulltoa(x2,Dbuffer,10);
     result = Dbuffer[y-1]-'0';
     return result;    
 }
-
 
 void  main()
 { 
@@ -85,21 +93,24 @@ gettimeofday(&tv1, NULL);*/
 
 begin = clock();
 /* here, do your time-consuming job */
- //   int i;
-	//int num[]={1,10,100,1000,10000,100000,1000000,100000000};
-	//int product=1,digit[10];
+    int i;
+	unsigned long long num[]={1,10,100,1000,10000,100000,1000000};
+	int product=1,digit[10];
 
-	//for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
-	//{ 		
-	//	digit[i]=findChampernowneDigit(num[i]);
-	//	//printf("the %d-th digit of sequence is %d\n\n",num[i],digit[i]);
-	//	product *= digit[i] ;
-	//}
-	int dig=1001;
-	printf("digit on %i-th place is %i\n",dig,findChampernowneDigit(dig));	
-	//printf("digit on %d-th place is %d\n",28383,findChampernowneDigit(28383));	
-	//printf("digit on %d-th place is %d\n",206788,findChampernowneDigit(206788));	
-	//printf("Product of d1*d10*d100*d1000*d10000*d100000*d1000000*d10000000 = %d\n\n",product);
+	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
+	{ 		
+		digit[i]=findChampernowneDigit(num[i]);
+		//printf("the %llu-th digit of sequence is %d\n\n",num[i],digit[i]);
+		product *= digit[i] ;
+	}
+
+	int dig1=1001;
+	unsigned long long dig2=100000000005;
+	printf("digit on %d-th place is %d\n",dig1,findChampernowneDigit(dig1));
+	printf("digit on %llu-th place is %d\n",dig2,findChampernowneDigit(dig2));
+	printf("digit on %d-th place is %d\n",28383,findChampernowneDigit(28383));	
+	printf("digit on %d-th place is %d\n",206788,findChampernowneDigit(206788));	
+	printf("Product of d1*d10*d100*d1000*d10000*d100000*d1000000 = %d\n\n",product);
 	end = clock();
    time_spent = (double)(end - begin); /* CLOCKS_PER_SEC;*/
   //printf("\nTime of execution is %f\n",time_spent);
