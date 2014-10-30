@@ -130,7 +130,7 @@
             double b = c1 / c2;
             double[] pointI = new double[3]{pointA[0]+b*pointV[0],
                 pointA[1]+b*pointV[1],pointA[2]+b*pointV[2]};
-            return Distance(pointC, pointI);
+            return Distance3D(pointC, pointI);
 
         }
         //Compute the distance from AB to C
