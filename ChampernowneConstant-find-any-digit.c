@@ -94,7 +94,7 @@ gettimeofday(&tv1, NULL);*/
 begin = clock();
 /* here, do your time-consuming job */
     int i;
-	unsigned long long num[]={1,10,100,1000,10000,100000,1000000};
+	int num[]={1,10,100,1000,10000,100000,1000000};
 	int product=1,digit[10];
 
 	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
