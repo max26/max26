@@ -26,7 +26,7 @@ int findChampernowneDigit(unsigned long long m)
     (this is number x2 , that contains our m-th digit of sequence on y-th place,if count from beginning of number x2
     As arrays in C are zero-based , so our target digit is on (y-1)-th place in number x2. 
     */
-    unsigned long long x1,x2;
+      unsigned long long x1,x2;
     int y,k,i,result;
     int remainder; 
 
@@ -66,7 +66,8 @@ int findChampernowneDigit(unsigned long long m)
 			if (remainder == 0) 
 			{
 				x2 = x1 + (unsigned long long)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
-				y = (m - N[k-2]) - x1*(k-1)+(k-1);	
+				//y = (m - N[k-2]) - x1*(k-1)+(k-1);	
+				y=k-1;
 			}
 			else
 			{
@@ -99,7 +100,7 @@ begin = clock();
 	for (i=0;i<(sizeof(num)/sizeof(num[0]));i++)
 	{ 		
 		digit[i]=findChampernowneDigit(num[i]);
-		//printf("the %llu-th digit of sequence is %d\n\n",num[i],digit[i]);
+		//printf("the %d-th digit of sequence is %d\n\n",num[i],digit[i]);
 		product *= digit[i] ;
 	}
 
@@ -118,4 +119,4 @@ begin = clock();
    printf ("It took me %f clicks (%f.10 seconds).\n",time_spent,(time_spent)/CLOCKS_PER_SEC);
 
    getchar();
-}    
+}
