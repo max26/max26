@@ -7,7 +7,7 @@
 /*  Look at article for explanation of implemented algorithm below
 http://www.mathblog.dk/project-euler-40-digit-fractional-part-irrational-number/
 It has helped me a lot in designing this routine.
-Thanks a lot to the article's author!
+Thanks a lot to the article's author Kristian!
 */
 int findChampernowneDigit(int m)
 {	
