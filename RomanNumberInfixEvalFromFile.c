@@ -1,4 +1,4 @@
-/*problem from postgraduate entrance exam MSU (Moscow State University)
+/*problem from Postgraduate (magistracy) entrance exam MSU (Moscow State University)
 Faculty of Computing Mathematics and Cybernetics 2010
 
 Description:
@@ -149,7 +149,7 @@ double evalpre()
 
 	//printf("Enter arithmetical expression in prefix form values,like 12*8/4:\n");
 	
-	//fscanf(stdin,"%s",string);
+	//scanf("%s",string);
 	fscanf(stdin,"%s",string);
 
 	len=strlen(string);
