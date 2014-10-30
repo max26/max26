@@ -12,7 +12,7 @@ Thanks a lot to the article's author Kristian!
 int findChampernowneDigit(int m)
 {	
    //  m  -  m-th of Champernowne constant that has to be found
-    long N[10];// array of countin number of digits used by 1-digiters,2-digiters,3-digiters etc
+    long N[10];// array that keeps number of digits used by 1-digiters,2-digiters,3-digiters etc
     char Dbuffer[10];
     /* array for storing our target last number x2 that contains our sought digit 
     (this is number x2 , that contains our m-th digit of sequence on y-th place,if count from beginning of number x2
