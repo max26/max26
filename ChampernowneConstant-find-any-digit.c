@@ -26,9 +26,8 @@ int findChampernowneDigit(unsigned long long m)
     (this is number x2 , that contains our m-th digit of sequence on y-th place,if count from beginning of number x2
     As arrays in C are zero-based , so our target digit is on (y-1)-th place in number x2. 
     */
-    unsigned long long x1=0,x2=0;
-	int y=0;
-    int k,i,result;
+    unsigned long long x1,x2;
+    int y,k,i,result;
     int remainder; 
 
     for (i=0;i<15;i++)
