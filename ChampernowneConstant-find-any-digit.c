@@ -16,17 +16,18 @@ http://math.stackexchange.com/questions/61890/computing-the-nth-term-of-a-sequen
 char* ulltoa(unsigned long long _n, char * _c, int _i)
 { return _ui64toa (_n, _c, _i); } 
 
+typedef unsigned long long ull;
 
 int findChampernowneDigit(unsigned long long m)
 {	
    //  m  -  m-th digit of Champernowne constant that has to be found
-    unsigned long long N[20];// array that keeps number of digits occupied by 1-digiters,2-digiters,3-digiters etc
+    ull N[20];// array that keeps number of digits occupied by 1-digiters,2-digiters,3-digiters etc
     char Dbuffer[20];
     /* array for storing our target last number x2 that contains our sought m-th digit 
     (this is number x2 , that contains our m-th digit of sequence on y-th place,if count from beginning of number x2
     As arrays in C are zero-based , so our target digit is on (y-1)-th place in number x2. 
     */
-      unsigned long long x1,x2;
+    ull x1,x2;
     int y,k,i,result;
     int remainder; 
 
@@ -43,7 +44,7 @@ int findChampernowneDigit(unsigned long long m)
     {          
         for (k=1;N[k-1]<=m;k++)
         {    
-            N[k] = N[k-1] + (k)*9*((unsigned long long)(pow((double)10,k-1)));           
+            N[k] = N[k-1] + (k)*9*((ull)(pow((double)10,k-1)));           
         }    
         x1 = (m - N[k-2])/(k-1) ;
 		remainder =(m - N[k-2])%(k-1) ;
@@ -58,20 +59,20 @@ int findChampernowneDigit(unsigned long long m)
 			{
 		      x1=1;
 			}
-            x2 = x1 + (unsigned long long)pow((double)10,1)-1;
+            x2 = x1 + (ull)pow((double)10,1)-1;
             y=1;
         }               
         else
         {	
 			if (remainder == 0) 
 			{
-				x2 = x1 + (unsigned long long)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
+				x2 = x1 + (ull)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
 				//y = (m - N[k-2]) - x1*(k-1)+(k-1);	
 				y=k-1;
 			}
 			else
 			{
-				x2 = x1 + (unsigned long long)pow((double)10,k-2);  //  target (k-1)-th number that we're lookin for
+				x2 = x1 + (ull)pow((double)10,k-2);  //  target (k-1)-th number that we're lookin for
 				y = (m - N[k-2]) - x1*(k-1);
 			}		
         }  
@@ -105,7 +106,7 @@ begin = clock();
 	}
 
 	int dig1=1001;
-	unsigned long long dig2=100000000005;
+	ull dig2=100000000005;
 	printf("digit on %d-th place is %d\n",dig1,findChampernowneDigit(dig1));
 	printf("digit on %llu-th place is %d\n",dig2,findChampernowneDigit(dig2));
 	printf("digit on %d-th place is %d\n",28383,findChampernowneDigit(28383));	
