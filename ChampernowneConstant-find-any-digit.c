@@ -47,7 +47,7 @@ int findChampernowneDigit(unsigned long long m)
             N[k] = N[k-1] + (k)*9*((ull)(pow((double)10,k-1)));           
         }    
         x1 = (m - N[k-2])/(k-1) ;
-		   remainder =(m - N[k-2])%(k-1) ;
+        remainder =(m - N[k-2])%(k-1) ;
 
         if (x1<1)
         {   
