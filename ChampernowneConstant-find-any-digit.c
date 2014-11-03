@@ -68,7 +68,7 @@ int findChampernowneDigit(unsigned long long m)
 			{
 				x2 = x1 + (ull)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
 				//y = (m - N[k-2]) - x1*(k-1)+(k-1);	
-				y=k-1;
+				y = k-1;
 			}
 			else
 			{
