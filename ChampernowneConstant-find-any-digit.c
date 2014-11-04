@@ -34,52 +34,45 @@ int findChampernowneDigit(unsigned long long m)
     for (i=0;i<15;i++)
     {
         N[i]=0;
-    }       
-    if  (m==1)
-    {
-        x2=1;
-        y=1;         
-    }
-    else
-    {          
-        for (k=1;N[k-1]<=m;k++)
-        {    
-            N[k] = N[k-1] + (k)*9*((ull)(pow((double)10,k-1)));           
-        }    
-        x1 = (m - N[k-2])/(k-1) ;
-        remainder = (m - N[k-2])%(k-1) ;
+    }     
+    for (k=1;N[k-1]<=m;k++)
+    {    
+        N[k] = N[k-1] + (k)*9*((ull)(pow((double)10,k-1)));           
+    }    
+    x1 = (m - N[k-2])/(k-1) ;
+    remainder =(m - N[k-2])%(k-1) ;
 
-        if (x1<1)
-        {   
-	    if (remainder == 0)
-	    {
-	        x1=0;
-	    }
-	    else
-	    {
-		x1=1;
-	    }
-            x2 = x1 + (ull)pow((double)10,1)-1;
-            y=1;
-        }               
-        else
-        {	
+    if (x1<1)
+    {   
+		if (remainder == 0)
+		{
+			x1=0;
+		}
+		else
+		{
+		    x1=1;
+		}
+        x2 = x1 + (ull)pow((double)10,1)-1;
+        y=1;
+    }               
+    else
+    {	
 		if (remainder == 0) 
 		{
 			x2 = x1 + (ull)pow((double)10,k-2)-1;  //  target (k-1)-th number that we're lookin for
 			//y = (m - N[k-2]) - x1*(k-1)+(k-1);	
-			y = k-1;
+			y=k-1;
 		}
 		else
 		{
 			x2 = x1 + (ull)pow((double)10,k-2);  //  target (k-1)-th number that we're lookin for
-			y = (m - N[k-2]) - x1*(k-1);
+			//y = (m - N[k-2]) - x1*(k-1);
+			y=remainder;
 		}		
-        }  
-    }
+    }  
     ulltoa(x2,Dbuffer,10);
     result = Dbuffer[y-1]-'0';
-    return result;    
+    return result;   
 }
 
 void  main()
