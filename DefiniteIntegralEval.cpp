@@ -1,6 +1,6 @@
 
 /*  Moscow State University - Faculty of Computing mathematics and Cybernetics
-Postgraduate (magistracy)  entrance exam - 2013   */
+Postgraduate entrance exam - 2013   */
 
 /*  
 Evaluate  integral of polynomial (its degree is supposed to be less than 99)
