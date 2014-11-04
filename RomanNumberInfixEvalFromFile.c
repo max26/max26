@@ -1,4 +1,4 @@
-/*problem from Postgraduate (magistracy) entrance exam MSU (Moscow State University)
+/*problem from Postgraduate entrance exam MSU (Moscow State University)
 Faculty of Computing Mathematics and Cybernetics 2010
 
 Description:
