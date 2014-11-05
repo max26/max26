@@ -30,17 +30,14 @@ int findChampernowneDigit(unsigned long long m)
     ull x1,x2;
     int y,k,i,result;
     int remainder; 
-
-    for (i=0;i<15;i++)
-    {
-        N[i]=0;
-    }     
+    N[0]=0;
+   
     for (k=1;N[k-1]<=m;k++)
     {    
         N[k] = N[k-1] + (k)*9*((ull)(pow((double)10,k-1)));           
     }    
     x1 = (m - N[k-2])/(k-1) ;
-    remainder =(m - N[k-2])%(k-1) ;
+    remainder = (m - N[k-2])%(k-1) ;
 
     if (x1<1)
     {   
