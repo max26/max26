@@ -1,4 +1,8 @@
 
+/*************************************************************************** 
+ *   Copyright (C) 2014 by Maxim Fetisov                                   * 
+ *   blizzard005 at gmail dot com                                          * 
+ **************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
