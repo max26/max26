@@ -1,5 +1,8 @@
-
-      
+/*************************************************************************** 
+ *   Copyright (C) 2014 by Maxim Fetisov                                   * 
+ *   blizzard005 at gmail dot com                                          * 
+ **************************************************************************/
+ 
         //Compute the dot product AB.AC
         //private double DotProduct(double[] pointA, double[] pointB, double[] pointC)
         //{
