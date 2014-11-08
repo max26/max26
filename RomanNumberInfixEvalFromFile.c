@@ -1,3 +1,8 @@
+/*************************************************************************** 
+ *   Copyright (C) 2014 by Maxim Fetisov                                   * 
+ *   blizzard005 at gmail dot com                                          * 
+ **************************************************************************/
+
 /*problem from Postgraduate entrance exam MSU (Moscow State University)
 Faculty of Computing Mathematics and Cybernetics 2010
 
