@@ -1,8 +1,10 @@
-
+/*************************************************************************** 
+ *   Copyright (C) 2014 by Maxim Fetisov                                   * 
+ *   blizzard005 at gmail dot com                                          * 
+ **************************************************************************/
 /*  Moscow State University - Faculty of Computing mathematics and Cybernetics
-Postgraduate entrance exam - 2013   */
+Postgraduate entrance exam - 2013
 
-/*  
 Evaluate  integral of polynomial (its degree is supposed to be less than 99)
 ,if coefficients of this polynomial are defined (in file polynomial.txt).
 In file 'parameters.txt' there are 3 values defined: 
