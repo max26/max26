@@ -108,8 +108,8 @@
             else // if lines are parallel
             {
                 double[] det2 = new double[3] { m1 * diff[2] - n1 * diff[1], n1 * diff[0] - l1 * diff[2], l1 * diff[1] - m1 * diff[0] };
-                double numerator = Math.Sqrt(Math.Abs(DotProduct3D(det2, det2)));
-                double denominator = Math.Sqrt(Math.Abs(DotProduct3D(pointV, pointV)));
+                double numerator = Math.Sqrt(DotProduct3D(det2, det2));
+                double denominator = Math.Sqrt(DotProduct3D(pointV, pointV));
                 double d2 = numerator / denominator;
                 return d2;
             }
