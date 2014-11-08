@@ -72,6 +72,12 @@ float qtrap(float (*f)(float),float a,float b,int n)
 	Параметру JMAX  - соответственно такое значение, что
 	значение 2 в степени (JMAX - 1) - это максимум разрешенного количества шагов.
 	Интегрирование производится по правилу трапеций.
+	This function returns integral of function that is taken in limits from a to b.
+	Parameter EPS can be set to precision value(0.0000000,number of digits in fractional part)
+	that is needed for problem answer.
+	Parameter JMAX is such a value that 2 in power of (JMAX-1)
+	is maximum of allowed quantity algorithm's steps.
+	Integration is produced by trapezoid rule.
 	*/
 
 	float trapzd(float (*func)(float),float a,float b,int n);
