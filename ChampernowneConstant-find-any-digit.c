@@ -1,4 +1,7 @@
-
+/*************************************************************************** 
+ *   Copyright (C) 2014 by Maxim Fetisov                                   * 
+ *   blizzard005 at gmail dot com                                          * 
+ **************************************************************************/
 /*  Look at next article for explanation of implemented algorithm below
 http://www.mathblog.dk/project-euler-40-digit-fractional-part-irrational-number/
 It has helped me a lot in designing this routine.
