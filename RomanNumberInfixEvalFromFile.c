@@ -7,7 +7,7 @@
 Faculty of Computing Mathematics and Cybernetics 2010
 
 Description:
-"Roman digits calculator"
+"Roman digits infix calculator"
 
 In text file  input.txt  there defined arithmetcal expression
 written by Roman digits.Example of such expression is as below:
@@ -15,9 +15,9 @@ IX-VII-XX+XVI/II-XI
 
 Task is to write routine that takes as input this expression from file,
 converts it into decimal system and then finds its value.
-Value of this expression has to be written to text  file output.txt.
+Result has to be written to text  file output.txt.
 Files input.txt and output.txt are to be stored in the same folder
-as executable files of the routine
+as executable file of the routine.
 */
 
 
