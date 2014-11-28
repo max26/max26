@@ -125,9 +125,9 @@ double oper(char symb,double op1,double op2)
 	{
 	case '+':return(op1+op2);break;
 	case '-':return (op1-op2);break;
-    case '*':return(op1*op2);break;		
-    case '/':return(op1/op2);break;
-    case '$':return(power(op1,op2));break;
+        case '*':return(op1*op2);break;		
+        case '/':return(op1/op2);break;
+        case '$':return(power(op1,op2));break;
 	default:printf("invalid operator\n");return 0;break;
 	}
 }
