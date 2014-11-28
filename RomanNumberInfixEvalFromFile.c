@@ -139,87 +139,87 @@ void append(char* s, char c)
         s[len+1] = '\0';
 }
 
-
 double evalpre()
 {
-	struct stack ps;
-	ps.top=-1;
-	int len;
-	int i,k,l,Break,p;
-	char string[100],c,symbol;
-	double s[10],d[10];
-	char str[10]; 
-	double op1,op2;//top1,top2;
-	double value;
+struct stack ps;
+ps.top=-1;
+int len;
+int i,k,l,Break,p;
+char string[100],c,symbol;
+double s[10],d[10];
+char str[10]; 
+double op1,op2;//top1,top2;
+double value;
 
-	//printf("Enter arithmetical expression in prefix form values,like 12*8/4:\n");
-	
-	//scanf("%s",string);
-	fscanf(stdin,"%s",string);
+//printf("Enter arithmetical expression in prefix form values,like 12*8/4:\n");
 
-	len=strlen(string);
-	value=0;
+//scanf("%s",string);
+fscanf(stdin,"%s",string);
 
-	for (l=0;l<sizeof(s)/sizeof(s[0]);l++)
-		s[l]=0;
-	for (l=0;l<sizeof(str)/sizeof(str[0]);l++)
-	     str[l]=0;
+len=strlen(string);
+value=0;
 
-	l=0;
-    for (i=0;i<len;i++)
-	{  	
-				if (!ISROMAN(string[i])) 
-		        { 
-					symbol=string[i];printf("\nsymbol=%c\n",symbol);str[l+1]=0;l++;
-						continue;
-		        }               		
-				else
-				{                          
-					 if (ISROMAN(string[i]))
-					   {  	//if (l==1) {printf("\n!i=%d\n",i);}
-					                      
-					  	 append(&str[l],string[i]);
-						  printf("\n\nstr[%d]=%s\n\n",l,&str[l]);
-						  s[l]=RomanToDec(&str[l]);	
-					   }
+for (l=0;l<sizeof(s)/sizeof(s[0]);l++)
+	s[l]=0;
+for (l=0;l<sizeof(str)/sizeof(str[0]);l++)
+	str[l]=0;
 
-                        printf("OK!!"); //s[l]=atof(d[l]);					
-					    printf("\n\ns[%d]=%f\n\n",l,s[l]);
-		      // end of 'for' loop  
-						
-			  if (ISROMAN(string[i]) && !ISROMAN(string[i+1]))
-			  {        push(&ps,s[l]);			          	          
-					   printf("item[top]=%f\n",ps.item[ps.top]);
-		               printf("top=%d\n",ps.top);   
-			  }
+l=0;
+for (i=0;i<len;i++)
+{  	
+	if (!ISROMAN(string[i])) 
+	{ 
+		symbol=string[i];
+		printf("\nsymbol=%c\n",symbol);
+		str[l+1]=0;l++;
+		continue;
+	}               		
+	else
+	{                          
+		if (ISROMAN(string[i]))
+		{  	//if (l==1) {printf("\n!i=%d\n",i);}
 
-			 if (ps.top>=1)	
-			 //if (ps.top>=1 && string[i+1]!='*' ||ps.top>=1 && string[i+1]!='/')	
-		      {		
-			      printf("\nOK!\n");
-				  op2=pop(&ps);op1=pop(&ps);
-				  value=(oper(symbol,op1,op2));
-			      push(&ps,value);	
-			      printf("\nvalue=%f\n",value);
-			  }
-			 
-			 //else
-			 //{
-			 //     printf("\nOK2!\n");
-				//  op2=pop(&ps);//op1=pop(&ps);
-				//  int temp;
-				//  temp  = s[0];
-				//  printf("temp=%f\n",temp);
-				//  value=(oper(symbol,s[1],op2));
-			 //     //push(&ps,value);	
-			 //     printf("\nvalue2=%f\n",value);
-			 //}
+			append(&str[l],string[i]);
+			printf("\n\nstr[%d]=%s\n\n",l,&str[l]);
+			s[l]=RomanToDec(&str[l]);	
+		}
 
+		printf("OK!!"); //s[l]=atof(d[l]);					
+		printf("\n\ns[%d]=%f\n\n",l,s[l]);
+		// end of 'for' loop  
 
-	     }
-      } 
-		return value;
+		if (ISROMAN(string[i]) && !ISROMAN(string[i+1]))
+		{        push(&ps,s[l]);			          	          
+		printf("item[top]=%f\n",ps.item[ps.top]);
+		printf("top=%d\n",ps.top);   
+		}
+
+		if (ps.top>=1)	
+			//if (ps.top>=1 && string[i+1]!='*' ||ps.top>=1 && string[i+1]!='/')	
+		{		
+			printf("\nOK!\n");
+			op2=pop(&ps);op1=pop(&ps);
+			value=(oper(symbol,op1,op2));
+			push(&ps,value);	
+			printf("\nvalue=%f\n",value);
+		}
+
+		//else
+		//{
+		//     printf("\nOK2!\n");
+		//  op2=pop(&ps);//op1=pop(&ps);
+		//  int temp;
+		//  temp  = s[0];
+		//  printf("temp=%f\n",temp);
+		//  value=(oper(symbol,s[1],op2));
+		//     //push(&ps,value);	
+		//     printf("\nvalue2=%f\n",value);
+		//}
+	}
+} 
+return value;
 }
+
 
 void main()
 {
