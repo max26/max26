@@ -2,7 +2,9 @@
  *   Copyright (C) 2014 by Maxim Fetisov       *
  *   blizzard005 at gmail dot com              *
  **********************************************/
- 
+ Moscow state university (MSU) -postgraduate entrance exam - 2005
+Faculty of computing mathematics and cybernetics
+Task Description:
  
  ВМиК МГУ-2005, магистратура (вступительный экзамен)
 Задание:
