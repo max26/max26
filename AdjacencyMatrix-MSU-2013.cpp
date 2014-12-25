@@ -2,6 +2,10 @@
  *   Copyright (C) 2014 by Maxim Fetisov       *                             
  *   blizzard005 at gmail dot com              *
  **********************************************/
+ Moscow state university(MSU) -postgraduate entrance exam - 2013
+ Faculty of computing mathematics and cybernetics
+ Task 2 (out of total 4).
+ 
 ВМИК МГУ-2013, магистратура, вступительный экзамен.
 Задание 2 (из 4-х).
 В текстовом файле edges.txt непустым списком дуг задан ориентированный граф,
